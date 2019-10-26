@@ -17,11 +17,12 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var header = require('.././header.js');
+var apiCatalog = require('./routes/api-catalog');
 
 mongoose.Promise = require('bluebird');
 
 // Output the header to the console
-console.log(header.display('April', 'Auger', 'Assignment 1.4') + '\n');
+console.log(header.display('April', 'Auger', 'API Gateway Project') + '\n');
 
 // Database Connection String
 var mongoDB = "mongodb+srv://admin:admin@buwebdev-cluster-1-bzl71.mongodb.net/api-gateway?retryWrites=true&w=majority";
@@ -37,6 +38,9 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true, prom
 
 // Create new Express application
 var app = express();
+
+// Register the API Catalog's routes
+app.use('/api', apiCatalog);
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
