@@ -16,15 +16,27 @@ var Schema = mongoose.Schema;
 
 // Create the user schema
 var UserSchema = new Schema({
-	username: {type: String, require: true},
-	password: {type: String, required: true},
-	email: {type: String, required: true}
-}, {
-	collection: "users"
+    username: String,
+    password: String,
+    email: String
 });
 
 // Attach the UserSchema to a User Model
-var User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 // Make the model available for other modules to require
 module.exports = User;
+
+/**
+ Database queries
+ */
+// Adds a new user to the database
+module.exports.add = (user, callback) => {
+    user.save(callback);
+};
+
+// Find a user in the database by their id
+module.exports.getById = (id, callback) => {
+    var query = {_id: id};
+    User.findById(query, callback);
+};
