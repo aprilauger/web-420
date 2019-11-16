@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="soapui" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="API Gateway">C:/Users/april/bu-webdev/web-420/week-5/API-Gateway-unit-test-02.xml</con:project>
+  <con:collectInfoForSupport>false</con:collectInfoForSupport>
+</con:soapui-workspace>
