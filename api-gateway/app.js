@@ -16,7 +16,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var header = require('.././header.js');
 var indexRouter = require('./routes/index');
 var apiCatalog = require('./routes/api-catalog');
 
@@ -24,9 +23,6 @@ mongoose.Promise = require('bluebird');
 
 // Create new Express application
 var app = express();
-
-// Output the header to the console
-console.log(header.display('April', 'Auger', 'API Gateway Project') + '\n');
 
 // Database Connection String
 var mongoDB = "mongodb+srv://admin:admin@buwebdev-cluster-1-bzl71.mongodb.net/api-gateway?retryWrites=true&w=majority";
